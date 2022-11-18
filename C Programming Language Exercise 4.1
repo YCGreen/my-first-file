@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int strrindex(char s[], char t[]) {
+    int rind = -1;
+    
+    int i, j, k;
+    for(i = 0; i <= strlen(s) - strlen(t); i++) {
+        for(j = i, k = 0; t[k] != '\0' && s[j] == t[k]; j++, k++);
+        
+        if(k > 0 && t[k] == '\0')
+            rind = j-strlen(t);  
+    }
+
+    return rind;    
+}
+
+void main() {
+    
+    printf("Rightmost starting index of the second string in the first is: %d\n", strrindex("Stringalingaling", "ing"));
+    
+    printf("Rightmost starting index of the second string in the first is: %d\n", strrindex("Stringalingaling", "none"));
+    
+    printf("Rightmost starting index of the second string in the first is: %d\n", strrindex("Stringalingaling", "g"));
+}
