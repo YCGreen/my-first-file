@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <ctype.h>
+
+static int error();
+
+void main(int argc, char *argv[]) {
+        if(error(argv[1]) == -1) {
+                printf("Unable to fork %d times", %argv[1]);
+        }
+
+      for(int i = 0; i < argv[1]; i++) {
+                if(-1 == (pid(fork()))) {
+                        printf("Error forking code");
+                        exit(0);
+                }
+
+        }
+
+        printf("Hello");
+
+}
+
+static int error(int x) {
+        if(!isdigit(argv[1]) || argv[1] < 0) {
+               return -1
+        }
+ return 0;
+}
+
